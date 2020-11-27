@@ -10,23 +10,35 @@ local n = 100
 local floor = math.floor
 
 local function Test_A()
+	local t = {}
 	for i=1,n do
-		local s = math.floor(i)
+		table.insert(t,i)
 	end
 end
 
 local function Test_B()
-	local floor = math.floor
+	local t = {}
 	for i=1,n do
-		local s = floor(i)
+		t[#t+1] = i
+	end
+end
+
+local function Test_C()
+	local t = {}
+	local j = 0
+	for i=1,n do
+		j = j + 1
+		t[j] = i
 	end
 end
 
 timeit(Test_A)
 timeit(Test_B)
+timeit(Test_C)
 
 --[[
-cost:0.804657;number:100000
-cost:0.603486;number:100000
+cost:2.573249;number:100000
+cost:1.176226;number:100000
+cost:0.785755;number:100000
 ]]--
 
