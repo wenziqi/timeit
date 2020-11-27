@@ -56,6 +56,7 @@ end
 -- timeit('a=1')
 -- timeit(test)
 
+timeit('a=b+c*d\n print(a)',1,{env={b=10,c=2,d=5}})
 
 return {
 	timeit=timeit,
