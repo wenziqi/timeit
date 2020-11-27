@@ -1,6 +1,7 @@
 -- @auth    rocky(wenshaoqi)
 -- @date    2020-11-27
-
+-- @ver     lua5.3
+-- @mail    952623276@qq.com
 
 local os = os
 
@@ -33,9 +34,11 @@ local function timeit(stmt,number,args)
 		setup()
 	end
 
+	local func_args = args.func_args or {}
+
 	local t0 = timer()
 	for i=1,number do
-		func()
+		func(unpack(func_args))
 	end
 	local t = timer() - t0
 	print("cost:"..t..';number:'..number)
@@ -56,7 +59,14 @@ end
 -- timeit('a=1')
 -- timeit(test)
 
-timeit('a=b+c*d\n print(a)',1,{env={b=10,c=2,d=5}})
+-- timeit('a=b+c*d\n print(a)',1,{env={b=10,c=2,d=5}})
+
+-- local function test_1(n)
+-- 	return n*2
+-- end
+
+-- timeit(test_1,nil,{func_args={10}})
+-- timeit(test_1,1,{func_args={10}})
 
 return {
 	timeit=timeit,
