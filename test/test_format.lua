@@ -6,7 +6,7 @@
 local timeit = require("timeit")
 
 
-local n = 100
+local n = 10
 
 local function Test_A()
 	for i=1,n do
