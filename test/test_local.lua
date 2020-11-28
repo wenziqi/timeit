@@ -21,8 +21,8 @@ local function Test_B()
 	end
 end
 
-timeit(Test_A)
-timeit(Test_B)
+timeit.timeit(Test_A)
+timeit.timeit(Test_B)
 
 --[[
 cost:0.804657;number:100000

@@ -32,9 +32,9 @@ local function Test_C()
 	end
 end
 
-timeit(Test_A)
-timeit(Test_B)
-timeit(Test_C)
+timeit.timeit(Test_A)
+timeit.timeit(Test_B)
+timeit.timeit(Test_C)
 
 --[[
 cost:2.573249;number:100000

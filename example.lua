@@ -13,17 +13,19 @@ local function test()
 	end
 end
 
-timeit('a=1')
-timeit(test)
+timeit.timeit('a=1')
 
-timeit('a=b+c*d\n print(a)',1,{env={b=10,c=2,d=5}})
+timeit.timeit(test)
+
+timeit.timeit('a=b+c*d\n print(a)',1,{env={b=10,c=2,d=5}})
 
 local function test_1(n)
 	return n*2
 end
 
-timeit(test_1,nil,{func_args={10}})
-timeit(test_1,1,{func_args={10}})
+timeit.timeit(test_1,nil,{func_args={10}})
+
+timeit.timeit(test_1,1,{func_args={10}})
 
 
 
