@@ -4,6 +4,7 @@
 -- @mail    952623276@qq.com
 
 local os = os
+local unpack = unpack or table.unpack
 
 
 local function timeit(stmt,number,args)
